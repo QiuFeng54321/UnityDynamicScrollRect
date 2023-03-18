@@ -159,8 +159,8 @@ namespace dynamicscroll
             var totalSize = 0f;
             var lastObjectPosition = Vector2.zero;
             startIndex = Mathf.Max(0, startIndex);
-            if (infoList.Count - startIndex < objectPool.Count && infoList.Count - objectPool.Count >= 0)
-                startIndex = infoList.Count - objectPool.Count;
+            if (infoList.Count - startIndex < objectPool.Count)
+                startIndex = Math.Max(0, infoList.Count - objectPool.Count);
             var currentIndex = startIndex;
             var canDrag = false;
 
